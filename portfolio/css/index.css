@@ -21,8 +21,8 @@ header{
     text-align: center;
     display: flex; /*header es un contenedor flexible*/
     flex-direction: row; /*direccion de los elementos hijos*/
-    flex-wrap: nowrap;
-    justify-content: space-around;
+    flex-wrap: nowrap; /*todos los hijos en una sola fila*/
+    justify-content: space-between;
 
 }   
 
@@ -39,7 +39,17 @@ header figure img{
 header h1{
     color: white;
     text-align: center;
-    border: 5px solid red;
+    border: 2px solid red;
+    display: flex;
+    /*Opcion 1*/
+    flex-direction: column;
+    justify-content: center;
+    /*Opcion 2*/
+    /* flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center; */
+
     /*width: 20vh*/;  
     /*display: inline-block; /*trasnforma un elementode de bloque en un elemento de linea*/
 }
@@ -48,6 +58,11 @@ header nav{
     border: 1px solid red;
     padding: 10px;
     text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
 }
 
 header nav a {
@@ -68,11 +83,57 @@ header nav a:hover{
 
 
 main{
-    background-color: lightgrey;
+    background-color: beige;
     height: 78vh;
+    display: flex;
+    flex-direction: row;
 
 }
+
+main nav{
+    border: 2px solid black;
+    flex-basis: 20%;
+}
+
+main section{
+    border: 2px solid black;
+    flex-basis: 60%;
+
+}
+
+main aside{
+    border: 2px solid black;
+    flex-basis: 20%;
+
+}
+
 footer{
     background-color: lightgreen;
     height: 10vh;
+    display: flex;
+    flex-direction: row;
+}
+
+footer nav{
+    flex-basis: 50%;
+    border: 2px solid black;
+}
+
+footer div{
+    flex-basis: 50%;
+    border: 2px solid black;
+
+}
+
+footer nav figure {
+    height: 100%;
+}
+
+footer nav figure img {
+    height: 70%;
+    padding: 5px;
+}
+
+footer nav figure a img:hover{
+    background-color: beige;
 }
