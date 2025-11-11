@@ -58,14 +58,109 @@ header form input{
     background-color: bisque;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
+
 header #enlaces {
     background-color: yellow;
     flex-basis: 30%;
 }
+
+
 main {
     flex-basis: 65%;
-    background-color: azure;
 }
+
+main section{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+main section article{
+    position: relative;
+
+    border: 1px solid black;
+    flex-basis:24.5% ;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    /*arriba izquierda abajo derecha*/
+    /*distancia exterior*/
+    margin: 5px 0px 5px 0px;
+    /*distancia interior*/
+    padding: 10px;
+    border-radius: 8px;
+    /*efecto reposo -- animacion*/
+    transition: all 0.3s ease-in-out;
+
+}
+
+main section article:hover{
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    /*efecto activo -- animacion*/
+    transform: translateY(-5px);
+    background-color: antiquewhite;
+}
+
+main section article .envio{
+    position: absolute;
+    top: 50px;
+    left: 10px;
+    background-color: rgb(202,78,148);
+    border-radius: 5px;
+    padding: 3px;
+    color: white;
+    font-weight: bold;
+    width: 40%;
+}
+
+main section article figure{
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main section article figure img{
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+main section article .valoracion{
+    flex-basis: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+main section article .valoracion .star{
+    margin-right: 10px;
+}
+
+main section article .valoraciones .star i{
+    color: gold;
+    font-size: 12px;
+}
+
+main section article .valoracion .nvaloraciones{
+    font-size: 10px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+main section article .valoracion .comentarios{
+    font-size: 10px;
+    font-weight: bold;
+}
+
+
 footer {
     flex-basis: 30%;
     background-color: black;
@@ -104,8 +199,8 @@ footer nav#sociales a{ /*Estado de reposo del enlace*/
 
     /*realiza una animacion*/
     transition: all 0.3s ease-in-out;
-    
 }
+
 footer nav#sociales a:hover{
     transform: 
         translate(0px, -10px)
