@@ -211,6 +211,10 @@ main section article a.card-link{
     color: inherit;
     text-decoration: none;
     height: 100%;
+    cursor: pointer; /* make it clear the card is clickable */
+}
+main section article a.card-link:hover {
+    text-decoration: none;
 }
 main section article .valoraciones .nvaloraciones{
     font-size: 10px;
