@@ -3,12 +3,14 @@
   { 
     "id": 1,
     "nombre": "Cubot C45 AZUL - Reloj inteligente",
-    "precio": 34.99,
-    "precioOriginal": 499.99,
-    "descuento": 50,
+    "precios": {
+    "actual": 259.99,
+    "pvr": 499.99,
+    "descuento": 50
+    },
     "imagen": "https://thumb.pccomponentes.com/w-530-530/articles/1086/10863849/1216-cubot-kingkong-star-2-5g-12-256gb-negro-libre.jpg",
-    "valoracion": 5.4,
-    "opiniones": 0,
+    "valoracion": 5,
+    "opiniones": 150,
     "caracteristicas": {
       "cpu": "Chipset Realtek RTL8762C",
       "ram": "256 MB",
@@ -18,9 +20,11 @@
   {
     "id": 2,
     "nombre": "iPhone 16 5G 128GB Azul",
-    "precio": 799.00,
-    "precioOriginal": 959.00,
-    "descuento": 17,
+    "precios": {
+    "actual": 700.00,
+    "pvr": 850.49,
+    "descuento": 23
+    },
     "imagen": "https://thumb.pccomponentes.com/w-530-530/articles/1077/10777737/1515-apple-iphone-15-128gb-negro-libre.jpg",
     "valoracion": 5,
     "opiniones": 34,
@@ -33,9 +37,11 @@
   {
     "id": 3,
     "nombre": "Samsung Galaxy S24 Ultra",
-    "precio": 999.00,
-    "precioOriginal": 1180.00,
-    "descuento": 15,
+    "precios": {
+    "actual": 988.00,
+    "pvr": 1179.99,
+    "descuento": 15
+    },
     "imagen": "https://thumb.pccomponentes.com/w-530-530/articles/1081/10814363/1499-samsung-galaxy-s24-ultra-12-256gb-negro-titanium-libre.jpg",
     "valoracion": 4.9,
     "opiniones": 87,
@@ -48,9 +54,11 @@
   {
     "id": 4,
     "nombre": "Huawei Watch Fit 2",
-    "precio": 89.99,
-    "precioOriginal": 119.99,
-    "descuento": 25,
+    "precios": {
+    "actual": 79.99,
+    "pvr": 155.00,
+    "descuento": 50
+    },
     "imagen": "https://images.unsplash.com/photo-1606811841036-d8c7a9c5d3f3?w=500&auto=format&fit=crop",
     "valoracion": 4.6,
     "opiniones": 54,
@@ -63,9 +71,11 @@
   {
     "id": 5,
     "nombre": "Xiaomi Redmi Note 13 Pro",
-    "precio": 299.99,
-    "precioOriginal": 333.00,
-    "descuento": 10,
+    "precios": {
+    "actual": 299.99,
+    "pvr": 330.99,
+    "descuento": 10
+    },
     "imagen": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=500&auto=format&fit=crop",
     "valoracion": 4.5,
     "opiniones": 120,
@@ -78,9 +88,11 @@
   {
     "id": 6,
     "nombre": "Apple Watch SE 2",
-    "precio": 269.00,
-    "precioOriginal": 329.00,
-    "descuento": 20,
+    "precios": {
+    "actual": 569.99,
+    "pvr":799.99,
+    "descuento": 25
+    },
     "imagen": "https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?w=500&auto=format&fit=crop",
     "valoracion": 4.8,
     "opiniones": 102,
@@ -93,9 +105,11 @@
   {
     "id": 7,
     "nombre": "Amazfit GTR 3",
-    "precio": 119.00,
-    "precioOriginal": 169.00,
-    "descuento": 30,
+    "precios": {
+    "actual": 34.99,
+    "pvr": 499.99,
+    "descuento": 50
+    },
     "imagen": "https://images.unsplash.com/photo-1585386959984-a41552231693?w=500&auto=format&fit=crop",
     "valoracion": 4.5,
     "opiniones": 76,
@@ -108,9 +122,11 @@
   {
     "id": 8,
     "nombre": "MacBook Air M2",
-    "precio": 1199.00,
-    "precioOriginal": 1299.00,
-    "descuento": 8,
+    "precios": {
+    "actual": 199.99,
+    "pvr":299.99,
+    "descuento": 35
+    },
     "imagen": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=500&auto=format&fit=crop",
     "valoracion": 4.9,
     "opiniones": 210,
@@ -123,9 +139,11 @@
   {
     "id": 9,
     "nombre": "Razer BlackWidow V4",
-    "precio": 179.00,
-    "precioOriginal": 239.00,
-    "descuento": 25,
+    "precios": {
+    "actual": 179.99,
+    "pvr": 229.99,
+    "descuento": 25
+    },
     "imagen": "https://images.unsplash.com/photo-1593642532744-d377ab507dc8?w=500&auto=format&fit=crop",
     "valoracion": 4.7,
     "opiniones": 42,
@@ -138,9 +156,11 @@
   {
     "id": 10,
     "nombre": "JBL Charge 5",
-    "precio": 129.99,
-    "precioOriginal": 159.99,
-    "descuento": 18,
+    "precios": {
+    "actual": 129.99,
+    "pvr": 159.99,
+    "descuento": 18
+    },
     "imagen": "https://images.unsplash.com/photo-1585386959984-a41552231693?w=500&auto=format&fit=crop",
     "valoracion": 4.6,
     "opiniones": 89,

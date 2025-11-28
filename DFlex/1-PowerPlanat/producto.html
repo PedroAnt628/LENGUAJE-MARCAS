@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Producto - PowerPlanet</title>
+    <link rel="stylesheet" href="css/producto.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div id="menu">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <figure>
+            <img src="imagenes/logo.png" alt="Logo PowerPlanet">
+        </figure>
+        <form>
+            <input type="search" placeholder="Buscar Articulo ...">
+        </form>
+        <nav>
+            <a href="#">Ofertas Limitadas</a>
+            <a href="#">Contactanos</a>
+            <a href="#">ES</a>
+        </nav>
+        <div id="carrito">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <i class="fa-solid fa-user"></i>
+        </div>
+    </header>
+
+    <main>
+        <!-- Mini menú / breadcrumb -->
+        <div class="mini-menu">
+            <a href="index.html">Inicio</a> &gt; <span class="categoria">Categoría</span> &gt; <span class="nombre-producto">Producto</span>
+        </div>
+
+        <!-- Sección de producto -->
+        <section class="producto-detalle">
+            <!-- Columna izquierda: miniaturas -->
+            <div class="columna-miniaturas" data-container="miniaturas"></div>
+
+            <!-- Columna central: imagen grande -->
+            <div class="columna-imagen">
+                <img class="img-principal" src="" alt="Producto">
+            </div>
+
+            <!-- Columna derecha: información -->
+            <div class="columna-info">
+                <h2 class="nombre-producto"></h2>
+                <div class="valoraciones">
+                    <span class="estrellas"></span>
+                    <span class="valoracion-num"></span>
+                    <span class="opiniones"></span>
+                </div>
+                <div class="precio">
+                    <span class="descuento"></span>
+                    <span class="precio-actual"></span>
+                    <span class="precio-original"></span>
+                </div>
+                <div class="botones-compra">
+                    <button class="btn btn-carrito">Añadir al carrito</button>
+                    <button class="btn btn-comprar">Comprar ahora</button>
+                </div>
+                <h3>Características:</h3>
+                <ul class="caracteristicas"></ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <nav id="sociales">
+            <a href="#">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#">
+                <i class="fa-brands fa-facebook"></i>
+            </a>
+            <a href="#">
+                <i class="fa-brands fa-twitter"></i>
+            </a>
+            <a href="#">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+        </nav>
+        <div id="subscribete">
+            <h2>¡SUSCRÍBETE A POWEROFERTAS!</h2>
+            <input type="email" placeholder="Introduce tu email">    
+        </div>
+        <article>
+            <h3>Condiciones de Compra</h3>
+            <nav>
+                <a href="#">
+                    <i class="fa-solid fa-car"></i>
+                    <span>¿Qué envíos hay disponibles?</span>
+                </a>
+                <a href="#">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <span>Pagar a plazos</span>
+                </a>
+                <a href="#">
+                    <i class="fa-solid fa-file-lines"></i>
+                    <span>Condiciones generales</span>
+                </a>
+                <a href="#">
+                    <i class="fa-solid fa-wrench"></i>
+                    <span>Devolución y Garantías</span>
+                </a>
+                <a href="#">
+                    <i class="fa-solid fa-lock"></i>
+                    <span>Política de privacidad</span>
+                </a>
+            </nav>
+        </article>
+        <article>
+            <h3>Información</h3>
+            <nav>
+                <a href="#">Distribución al por mayor</a>
+                <a href="#">Contacta con nosotros</a>
+            </nav>
+        </article>
+    </footer>
+
+    <script>
+        // Leer producto id desde la URL: producto.html?id=123
+        const params = new URLSearchParams(window.location.search);
+        const productoID = parseInt(params.get('id'), 10) || 1;
+
+        // Fetch de datos JSON
+        fetch('./data/productos.json')
+            .then(res => res.json())
+            .then(productos => {
+                const producto = productos.find(p => p.id === productoID);
+                
+                if (!producto) {
+                    console.warn('Producto no encontrado');
+                    window.location.href = 'index.html';
+                    return;
+                }
+
+                // Actualizar nombre en breadcrumb y título
+                document.querySelector('.nombre-producto').textContent = producto.nombre;
+                document.title = producto.nombre + ' - PowerPlanet';
+
+                // Imagen principal
+                document.querySelector('.img-principal').src = producto.imagen;
+
+                // Precios
+                document.querySelector('.descuento').textContent = '-' + producto.precios.descuento + '%';
+                document.querySelector('.precio-actual').textContent = producto.precios.actual + '€';
+                document.querySelector('.precio-original').textContent = 'PVR ' + producto.precios.pvr + '€';
+
+                // Valoraciones
+                let estrellasHTML = '';
+                for (let i = 0; i < Math.round(producto.valoracion); i++) {
+                    estrellasHTML += '<i class="fa-solid fa-star"></i>';
+                }
+                document.querySelector('.estrellas').innerHTML = estrellasHTML;
+                document.querySelector('.valoracion-num').textContent = producto.valoracion;
+                document.querySelector('.opiniones').textContent = `(${producto.opiniones} opiniones)`;
+
+                // Características
+                const ulCaracteristicas = document.querySelector('.caracteristicas');
+                for (const key in producto.caracteristicas) {
+                    const li = document.createElement('li');
+                    li.textContent = key.toUpperCase() + ': ' + producto.caracteristicas[key];
+                    ulCaracteristicas.appendChild(li);
+                }
+
+                // Miniaturas
+                const containerMiniaturas = document.querySelector('[data-container="miniaturas"]');
+                for (let i = 0; i < 3; i++) {
+                    const img = document.createElement('img');
+                    img.src = producto.imagen;
+                    img.addEventListener('click', () => {
+                        document.querySelector('.img-principal').src = producto.imagen;
+                    });
+                    containerMiniaturas.appendChild(img);
+                }
+            })
+            .catch(err => console.error('Error al cargar productos:', err));
+    </script>
+</body>
+</html>

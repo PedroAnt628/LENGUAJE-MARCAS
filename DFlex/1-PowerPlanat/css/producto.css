@@ -1,0 +1,453 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* medida fija/absoluta --> px */
+    /* allow body to grow beyond the viewport height on small screens */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+header {
+    /* altura/anchura relativa % */
+    /* flex-basis: 5%; */ /* relativo */
+    height: 5vh; /* altura fija/absoluta adapta viewport */
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    /* allow elements to wrap instead of overflowing the viewport */
+    flex-wrap: wrap;
+    gap: 8px;
+    /* justify-content: space-between; */
+    align-items: center;
+    color: white;
+}
+header #menu {
+    flex-basis: 5%;
+}
+
+header #buscar {
+    flex-basis: 30%;
+    background-color: blue;
+}
+header figure {
+    flex-basis: 10%; /* WIDTH */
+    height: 100%;
+}
+header figure img{
+    height: 100%; /* 70% de la height del padre */
+    /* ensure the logo doesn't overflow */
+    max-width: 100%;
+    width: auto;
+}
+header form{
+    flex-basis: 20%; /* WIDTH */
+    height: 100%;
+    background-color: red;
+    display: flex;
+    flex-direction: column; /* eje principal columna */
+    justify-content: center; /* alineacion en eje principal */
+    align-items: center; /* alineacion en eje secunfdario */
+}
+
+header form input{
+    flex-basis: 50%; /* height */
+    width: 80%;
+    border-radius: 20px;
+    font-size: 1rem;
+    color: blue;
+    background-color: bisque;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+header #enlaces {
+    background-color: yellow;
+    flex-basis: 30%;
+}
+main {
+    /* ocupar casi todo el ancho disponible */
+    flex-basis: 65%;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 20px;
+}
+
+/* Mini menú / breadcrumb */
+main .mini-menu {
+    /* position sticky avoids overlay and keeps it visible without forcing layout overflow */
+    position: sticky;
+    top: 5vh;
+    left: 20px;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+    margin-left: 0;
+    padding: 10px 15px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+main .mini-menu a {
+    text-decoration: none;
+    color: #2196f3;
+    font-weight: 500;
+}
+
+main .mini-menu a:hover {
+    text-decoration: underline;
+}
+
+main .mini-menu span {
+    color: #2196f3;
+}
+
+/* Sección de producto - layout 3 columnas */
+main .producto-detalle {
+    display: flex;
+    flex-direction: row;
+    padding: 28px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: calc(100% - 40px);
+    margin: 0 auto;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+/* Columna izquierda: miniaturas */
+main .producto-detalle .columna-miniaturas {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 0 0 140px;
+}
+
+main .producto-detalle .columna-miniaturas img {
+    width: 140px;
+    height: 140px;
+    max-width: 100%;
+    object-fit: cover;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+}
+
+main .producto-detalle .columna-miniaturas img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Columna central: imagen principal */
+main .producto-detalle .columna-imagen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 auto;
+}
+
+main .producto-detalle .columna-imagen img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+/* Make all images responsive as a safety net */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Columna derecha: información del producto */
+main .producto-detalle .columna-info {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 540px;
+}
+
+main .producto-detalle .columna-info h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0;
+    color: #333;
+}
+
+/* Avoid long product names or continuous strings creating overflow */
+.nombre-producto, .caracteristicas, .nombre, .valoraciones {
+    word-break: break-word;
+}
+
+main .producto-detalle .columna-info h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+    color: #555;
+}
+
+/* Valoraciones */
+main .producto-detalle .valoraciones {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+main .producto-detalle .valoraciones .estrellas i {
+    color: #ffc107;
+    font-size: 20px;
+}
+
+main .producto-detalle .valoraciones .valoracion-num {
+    font-weight: bold;
+    color: #333;
+}
+
+main .producto-detalle .valoraciones .opiniones {
+    color: #888;
+    font-size: 14px;
+}
+
+/* Sección de precios */
+main .producto-detalle .precio {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 10px;
+    padding: 15px 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+main .producto-detalle .precio .descuento {
+    background-color: #e91e63;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+main .producto-detalle .precio .precio-actual {
+    font-size: 36px;
+    font-weight: bold;
+    color: #e91e63;
+}
+
+main .producto-detalle .precio .precio-original {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 16px;
+}
+
+/* Botones de compra */
+main .producto-detalle .botones-compra {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+main .producto-detalle .botones-compra .btn {
+    padding: 14px 28px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 0.2s ease-in;
+    flex: 1 1 auto;
+}
+
+@media (max-width: 768px) {
+    main .producto-detalle .botones-compra { flex-direction: column; gap: 8px; }
+    main .producto-detalle .botones-compra .btn { width: 100%; }
+    main .producto-detalle .columna-info h2 { font-size: 20px; }
+    main .producto-detalle .columna-info { max-width: 100%; }
+}
+
+main .producto-detalle .botones-compra .btn-carrito {
+    background-color: #2196f3;
+    color: white;
+}
+
+main .producto-detalle .botones-compra .btn-carrito:hover {
+    background-color: #1976d2;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+}
+
+main .producto-detalle .botones-compra .btn-comprar {
+    background-color: #e91e63;
+    color: white;
+}
+
+main .producto-detalle .botones-compra .btn-comprar:hover {
+    background-color: #c2185b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(233, 30, 99, 0.3);
+}
+
+/* Características */
+main .producto-detalle .caracteristicas {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+main .producto-detalle .caracteristicas li {
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 16px;
+    color: #555;
+}
+
+main .producto-detalle .caracteristicas li:last-child {
+    border-bottom: none;
+}
+
+
+footer {
+    /* asegurar que el footer ocupa todo el ancho de la ventana */
+    /* prefer not to fix it; allow it to flow to avoid overlay and horizontal scrolling */
+    position: relative;
+    width: 100%;
+    align-self: stretch;
+    flex-basis: 30%;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    /* todos los hijos (items) en una sola linea */
+    /*flex-wrap: nowrap;*/
+    /* todos los hijos (items) en varias lineas en funccion flexbasic */
+    flex-wrap: wrap;
+    z-index: 100;
+}
+
+/* ----------------- Responsive breakpoints ----------------- */
+/* Tablet and small laptops */
+@media (max-width: 1024px) {
+    header form { flex-basis: 40%; }
+    header figure { flex-basis: 20%; }
+    header #menu { flex-basis: 8%; }
+    header nav { flex-basis: 30%; }
+    main .producto-detalle { padding: 16px; gap: 16px; }
+    main .producto-detalle .columna-miniaturas { flex: 0 0 100px; }
+    main .producto-detalle .columna-miniaturas img { width: 100px; height: 100px; }
+}
+
+/* Mobile phones */
+@media (max-width: 768px) {
+    header { height: auto; align-items: flex-start; padding: 8px; }
+    header form { order: 3; width: 100%; flex-basis: 100%; }
+    header nav { order: 4; width: 100%; flex-basis: 100%; display:flex; justify-content:center; gap:8px; }
+    header figure { order: 2; flex-basis: 30%; }
+    header #menu { order: 1; }
+    main .mini-menu { position: relative; top: 0; left: 0; margin: 8px 0; }
+    main .producto-detalle { flex-direction: column; padding: 12px; }
+    main .producto-detalle .columna-miniaturas { flex-direction: row; overflow-x: auto; gap: 8px; flex: 0 0 auto; }
+    main .producto-detalle .columna-miniaturas img { width: 80px; height: 80px; flex: 0 0 auto; }
+    main .producto-detalle .columna-imagen img { max-width: 100%; }
+    main .producto-detalle .columna-info { width: 100%; }
+    footer { position: relative; }
+}
+footer nav#sociales {
+    background-color: none;
+    flex-basis: 50%; /* height (columno) / width (row) */
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    padding-left: 30px;
+
+}
+footer nav#sociales a{
+    /* estado de reposo del enlace (fotograma) */
+    text-decoration: none;
+    border: 0px solid black; 
+    background-color: lightgreen;
+    /* elemento en linea pero con propiedades de bloque */
+    display: inline-block;
+    
+    width: 30px;
+    height: 30px;
+    border-radius:50px;
+    margin-right: 7px;;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* realizar un cambio animado */
+    transition: all 0.3s ease-in-out;
+}
+
+footer nav#sociales a:hover{
+    /* estado sobre (fotograma) */
+    transform: 
+        translate(0px, -10px) 
+        rotate(60deg)
+        scale(1.2);
+}
+
+
+footer nav#sociales a i {
+    font-size: 20px;
+    color: white;
+}
+    
+footer div#subscribete{
+    background-color: burlywood;
+    flex-basis: 50%;
+    
+}
+
+footer article{
+    background-color: cadetblue;
+    flex-basis: 100%;
+}
+footer article h3{
+    color: whitesmoke;
+    text-transform: uppercase;
+    margin-left: 15px;
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+footer article nav {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid none;
+    margin-left: 25px;
+    /*padding-left: 30px;*/
+}
+footer article nav a{
+    border: 1px solid none;
+    text-decoration: none;
+    /* margin-left: 15px; */
+    margin-bottom: 10px;
+}
+footer article nav a i{
+    font-size: 20px;
+    color: whitesmoke;
+}
+footer article nav a span{
+    color: whitesmoke;
+}
+
+footer article nav a:hover span{
+    color: lightgreen
+}
+footer article nav a:hover i{
+    color: lightgreen;
+}

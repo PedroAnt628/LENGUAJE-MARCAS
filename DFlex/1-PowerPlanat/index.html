@@ -46,16 +46,14 @@
                         <i class="fa-solid fa-star"></i>
                     </span>
                     <span class="nvaloraciones">150</span>
-                    <span class="comentarios">(45 opiniones)</span>
+                    <span class="opiniones">(45 opiniones)</span>
                 </div>
                 <div precios>
                     <span class="dto"> 15% </span>
                     <span class="pvr"> 400€</span>
                     <span class="pvp"> 369.90€</span>
                 </div>
-                <div class="recibe">
-                        recibelos
-                </div>
+               
             </article>
             
             
@@ -186,13 +184,45 @@
             productos.forEach( producto => {
                 // en producto tendre cada producto del array
                 const tarjeta = document.createElement('article');
+
+                //Codigo js para poner las estrellas en funcion del 
+                //campo valoraciones
+                //Codigo js para poner las estrellas en funcion del campo valoracion
+                const maxEstrellas = 5; 
+                let estrellasHTML = "";
+
+                for (let i = 1; i <= producto.valoracion && i <= maxEstrellas; i++) {
+                    estrellasHTML += `<i class="fa-solid fa-star"></i>`;
+                }
+
+
                 tarjeta.innerHTML=
                 `
-                    <p class="envio">Envio Gratis</p>
-                     <figure>
-                        <img width= "100px" src="${producto.imagen}" />
-                    </figure>
-                    <p class="nombre">${producto.nombre}</p>
+                    <a href="producto.html?id=${producto.id}" class="card-link">
+                        <p class="envio">Envio Gratis</p>
+                        <figure>
+                            <img width="100px" src="${producto.imagen}" />
+                        </figure>
+                        <p class="nombre">${producto.nombre}</p>
+                        <div class="caracteristicas">
+                            <p class="cpu">${producto.caracteristicas.cpu}</p>
+                            <p class="ram">${producto.caracteristicas.ram}</p>
+                            <p class="disco">${producto.caracteristicas.disco}</p>
+                        </div>
+
+                        <div class="valoraciones">
+                            <span class="star">
+                                ${estrellasHTML}
+                            </span>
+                            <span class="nvaloraciones">${producto.valoracion}</span>
+                            <span class="opiniones">(${producto.opiniones} opiniones)</span>
+                        </div>
+                        <div class="precio">
+                            <span class="descuento">-26%</span>
+                            <span class="pvr">PVR <span class="tachado">799,00€</span></span>
+                            <span class="actual">589,00€</span>
+                        </div>
+                    </a>
                 `;
                 contSeccion.appendChild(tarjeta)
             })
