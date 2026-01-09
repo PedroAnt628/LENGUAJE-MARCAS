@@ -1,0 +1,23 @@
+
+{
+    "id": 2,
+    "nombre": "iPhone 16 5G 128GB Azul",
+    "precio": 700.00,
+    "preciOriginal": 850.49,
+    "descuento": 23,
+    "imagen": "https://thumb.pccomponentes.com/w-530-530/articles/1077/10777737/1515-apple-iphone-15-128gb-negro-libre.jpg",
+    "valoracion": 3,
+    "opiniones": 34,
+    "caracteristicas": {
+      "cpu": "Apple A18 Bionic",
+      "ram": "8 GB",
+      "disco": "128 GB"
+    },
+    "galeria": [
+        "https://www.powerplanetonline.com/cdnassets/apple_iphone_16_azul_01_l.jpg",
+        "https://www.powerplanetonline.com/cdnassets/apple_iphone_16_azul_02_ad_l.jpg",
+        "https://www.powerplanetonline.com/cdnassets/apple_iphone_16_azul_03_ad_l.jpg"
+
+    ]
+    
+  }

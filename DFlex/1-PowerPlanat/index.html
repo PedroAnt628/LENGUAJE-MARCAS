@@ -181,7 +181,7 @@
         // productos -> todo el array de objetos
         .then ( productos => {
             // recorro el array. Se ejecuta 10 veces
-            productos.forEach( producto => {
+            productos.forEach( productos => {
                 // en producto tendre cada producto del array
                 const tarjeta = document.createElement('article');
 
@@ -191,36 +191,36 @@
                 const maxEstrellas = 5; 
                 let estrellasHTML = "";
 
-                for (let i = 1; i <= producto.valoracion && i <= maxEstrellas; i++) {
+                for (let i = 1; i <= productos.valoracion && i <= maxEstrellas; i++) {
                     estrellasHTML += `<i class="fa-solid fa-star"></i>`;
                 }
 
 
                 tarjeta.innerHTML=
                 `
-                    <a href="detalle.html?id=${producto.id}" class="card-link">
+                    <a href="detalle.html?id=${productos.id}" class="card-link">
                         <p class="envio">Envio Gratis</p>
                         <figure>
-                            <img width="100px" src="${producto.imagen}" />
+                            <img width="100px" src="${productos.imagen}" />
                         </figure>
-                        <p class="nombre">${producto.nombre}</p>
+                        <p class="nombre">${productos.nombre}</p>
                         <div class="caracteristicas">
-                            <p class="cpu">${producto.caracteristicas.cpu}</p>
-                            <p class="ram">${producto.caracteristicas.ram}</p>
-                            <p class="disco">${producto.caracteristicas.disco}</p>
+                            <p class="cpu">${productos.caracteristicas.cpu}</p>
+                            <p class="ram">${productos.caracteristicas.ram}</p>
+                            <p class="disco">${productos.caracteristicas.disco}</p>
                         </div>
 
                         <div class="valoraciones">
                             <span class="star">
                                 ${estrellasHTML}
                             </span>
-                            <span class="nvaloraciones">${producto.valoracion}</span>
-                            <span class="opiniones">(${producto.opiniones} opiniones)</span>
+                            <span class="nvaloraciones">${productos.valoracion}</span>
+                            <span class="opiniones">(${productos.opiniones} opiniones)</span>
                         </div>
                         <div class="precio">
-                            <span class="descuento">-26%</span>
-                            <span class="pvr">PVR <span class="tachado">799,00€</span></span>
-                            <span class="actual">589,00€</span>
+                            <span class="descuento">-${productos.precios.descuento}%</span>
+                            <span class="pvr">${productos.precios.pvr}€</span>
+                            <span class="actual">${productos.precios.actual}€</span>
                         </div>
                     </a>
                 `;

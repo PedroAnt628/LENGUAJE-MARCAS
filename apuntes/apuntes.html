@@ -1,0 +1,169 @@
+<!DOCTYPE html> <!-- Indica que el documento es HTML5 -->
+<html lang="en"> <!-- Abre el documento HTML y define idioma principal (en inglés) -->
+<head>
+    <meta charset="UTF-8"> <!-- Codificación de caracteres (permite ñ, acentos, etc.) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Hace la página adaptable a móviles -->
+    <title>PowerPlanet</title> <!-- Título que aparece en la pestaña del navegador -->
+    <link rel="stylesheet" href="apuntes.css"> <!-- Conecta tu archivo CSS local -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"> <!-- Librería de iconos Font Awesome -->
+</head>
+<body> <!-- Todo lo visible en la página va dentro del body -->
+
+    <!-- CABECERA DE LA PÁGINA -->
+    <header>
+        <div id="menu"> <!-- Contenedor para el menú -->
+            <i class="fa-solid fa-bars"></i> <!-- Icono de menú hamburguesa -->
+        </div>
+        <figure> <!-- Contenedor semántico para imágenes -->
+            <img src="imagenes/logo.png" alt="Logo PowerPlanet"> <!-- Logo de la tienda -->
+        </figure>
+        <form> <!-- Formulario de búsqueda -->
+            <input type="search" placeholder="Buscar Articulo ..."> <!-- Campo de búsqueda -->
+        </form>
+        <nav> <!-- Menú de navegación -->
+            <a href="#">Ofertas Limitadas</a>
+            <a href="#">Contactanos</a>
+            <a href="#">ES</a>
+        </nav>
+        <div id="carrito"> <!-- Iconos de carrito y usuario -->
+            <i class="fa-solid fa-cart-shopping"></i>
+            <i class="fa-solid fa-user"></i>
+        </div>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+        <section id="catalogo"> <!-- Sección que contendrá los artículos del catálogo -->
+            <article> <!-- Cada producto se representa con un <article> -->
+                <p class="envio">Envio Gratis</p> <!-- Texto de envío -->
+                <figure>
+                    <img width="100px" src="img/productos/ipad.jpg" /> <!-- Imagen del producto -->
+                </figure>
+                <p class="nombre">Apple Ipad Pro</p> <!-- Nombre del producto -->
+                <p class="caracteristicas">128GB WiFi iPadOS 18 Plata</p> <!-- Características -->
+
+                <!-- Bloque de valoraciones -->
+                <div class="valoraciones">
+                    <span class="star"> <!-- Estrellas -->
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </span>
+                    <span class="nvaloraciones">150</span> <!-- Número de valoraciones -->
+                    <span class="comentarios">(45 opiniones)</span> <!-- Comentarios -->
+                </div>
+
+                <!-- Bloque de precios -->
+                <div precios>
+                    <span class="dto">15%</span> <!-- Descuento -->
+                    <span class="pvr">400€</span> <!-- Precio original -->
+                    <span class="pvp">369.90€</span> <!-- Precio final -->
+                </div>
+
+                <div class="recibe">recibelos</div> <!-- Texto adicional -->
+            </article>
+        </section>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <nav id="sociales"> <!-- Redes sociales -->
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        </nav>
+
+        <div id="subscribete"> <!-- Bloque de suscripción -->
+            <h2>¡SUSCRÍBETE A POWEROFERTAS!</h2>
+            <input type="email" placeholder="Introduce tu email">    
+        </div>
+
+        <!-- Bloques de información -->
+        <article>
+            <h3>Condiciones de Compra</h3>
+            <nav>
+                <a href="#"><i class="fa-solid fa-car"></i><span>¿Qué envíos hay disponibles?</span></a>
+                <a href="#"><i class="fa-solid fa-calendar-days"></i><span>¿Cómo pagar a plazos?</span></a>
+                <a href="#"><i class="fa-solid fa-file-lines"></i><span>Condiciones generales</span></a>
+                <a href="#"><i class="fa-solid fa-wrench"></i><span>Devolución y garantías</span></a>
+                <a href="#"><i class="fa-solid fa-lock"></i><span>Política de privacidad</span></a>
+                <a href="#"><i class="fa-solid fa-cookie"></i><span>Política de cookies</span></a>
+                <a href="#"><i class="fa-solid fa-tablet-screen-button"></i><span>Compra desde la APP</span></a>
+                <a href="#"><i class="fa-solid fa-briefcase"></i><span>Empleo</span></a>
+                <a href="#"><i class="fa-solid fa-building-columns"></i><span>Centros educativos</span></a>
+            </nav>
+        </article>
+
+        <article>
+            <h3>Distribuidores</h3>
+            <nav>
+                <a href="#">Distribución al por mayor</a>
+            </nav>
+        </article>
+
+        <article>
+            <h3>Información General</h3>
+            <nav>
+                <a href="#">¿Dudas? contacta</a>
+            </nav>
+        </article>
+    </footer>
+</body>
+</html>
+
+<!-- JAVASCRIPT PARA LISTAR PRODUCTOS -->
+<script>
+    // DOM = Modelo de Objetos del Documento (representa todo el HTML)
+    // document = objeto JS que contiene el DOM
+
+    const contSeccion = document.getElementById('catalogo'); 
+    // Busca la sección con id="catalogo" y la guarda en una variable
+
+    // Leer archivo JSON con productos
+    fetch('./apuntes.json')
+        .then(response => response.json()) // Convierte la respuesta en objeto JS
+        .then(productos => { // productos = array con todos los artículos
+
+            productos.forEach(producto => { // Recorre cada producto
+                const tarjeta = document.createElement('article'); // Crea un <article> vacío
+
+                // Generar estrellas dinámicamente según valoración
+                const maxEstrellas = 5; 
+                let estrellasHTML = '';
+                for (let i=1; i<=maxEstrellas; i++){
+                    if (i <= producto.valoracion){
+                        estrellasHTML += `<i class="fa-solid fa-star"></i>`; // estrella llena
+                    } else {
+                        estrellasHTML += `<i class="fa-regular fa-star"></i>`; // estrella vacía
+                    }
+                }
+
+                // Rellenar el artículo con datos del producto
+                tarjeta.innerHTML = `
+                    <p class="envio">Envio Gratis</p>
+                    <figure><img width="100px" src="${producto.imagen}" /></figure>
+                    <p class="nombre">${producto.nombre}</p>
+                    <p class="caracteristicas">
+                        <span class="cpu">${producto.caracteristicas.cpu}</span>
+                        <span class="ram">RAM: ${producto.caracteristicas.ram}</span>
+                        <span class="disco">HDD: ${producto.caracteristicas.disco}</span>
+                    </p>
+                    <div class="valoraciones">
+                        <span class="star">${estrellasHTML}</span>
+                        <span class="nvaloraciones">${producto.valoracion}</span>
+                        <span class="comentarios">(${producto.opiniones} opiniones)</span>
+                    </div>
+                `;
+
+                contSeccion.appendChild(tarjeta); // Añade el artículo al catálogo
+
+                // Al hacer clic en el producto → ir a su página detalle
+                tarjeta.addEventListener('click', () => {
+                    window.location.href = `detalleApuntes.html?id=${producto.id}`;
+                });
+            })
+        })
+</script>

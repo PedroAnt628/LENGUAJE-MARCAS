@@ -112,8 +112,8 @@ main section article .envio{
 
 }
 main section article figure{
+    flex-basis: 40%;
     border: 0px solid red;
-    flex-basis: 50%; /* height --> fdirection = column */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -124,9 +124,11 @@ main section article figure img{
     
 }
 main section article .nombre{
+    flex-basis: 10%;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 main section article .caracteristicas{
+    flex-basis: 20%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -147,53 +149,38 @@ main section article .caracteristicas .disco{
 }
 
 main section article .precio {
+    flex-basis: 20%;
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: calc(100% - 8px);
-    padding: 2% 4%;
-    font-family: sans-serif;
-    gap: 6px;
-        border: 1px solid red;
 
 }
 
 main section article .precio .descuento {
-    flex-basis: 20%;
-    height:     100%;
-    background-color: #e91e63;
-    color: white;
-    font-weight: bold;
-    font-size: 0.9rem;
-    padding: 4px 8px;
-    border-radius: 8px;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
+    flex-basis: 100%;
+    
+
 }
 
 main section article .precio .pvr {
-    flex-basis: 40%;
-    text-align: start;
-}
-
-main section article .precio .actual, main section article .precio .pvp {
-    flex-basis: 40%;
-    text-align: end;
-}
-
-main section article .precio .tachado, main section article .tachado {
     text-decoration: line-through;
-    color: #999;
-    margin-left: 4px;
-    font-size: 0.9rem;
+    flex-basis: 50%;
+    text-align: end;
+
 }
+
+main section article .precio .actual{
+    flex-basis: 50%;
+    text-align: end;
+
+
+}
+
 
 main section article .valoraciones{
+    flex-basis: 10%;
     border: 1px solid red;
-    width: 80%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -205,7 +192,6 @@ main section article .valoraciones .star i{
     font-size: 10px;
 }
 
-/* make the whole card link fill the article and remove default link styles */
 main section article a.card-link{
     display: block;
     color: inherit;
@@ -226,8 +212,6 @@ main section article .valoraciones .comentarios{
 }
 
 footer {
-    /* asegurar que el footer ocupa todo el ancho de la ventana */
-    align-self: stretch;
     flex-basis: 30%;
     background-color: black;
     display: flex;
@@ -326,3 +310,4 @@ footer article nav a:hover span{
 }
 footer article nav a:hover i{
     color: lightgreen;
+}

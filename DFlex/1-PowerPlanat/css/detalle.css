@@ -63,7 +63,7 @@ header #enlaces {
     flex-basis: 30%;
 }
 main {
-    flex-basis: 65%;
+    flex-basis: 65vh;
     margin: 10px auto;
     display: flex; 
     flex-direction: row; 

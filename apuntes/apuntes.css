@@ -1,0 +1,249 @@
+/* Reset general: quita márgenes y rellenos por defecto */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Incluye borde y padding dentro del tamaño total */
+}
+
+/* Estilos del body */
+body {
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+    display: flex; /* Activa flexbox */
+    flex-direction: column; /* Los hijos se colocan en columna (vertical) */
+    flex-wrap: nowrap; /* No se permite que los hijos salten de línea */
+}
+
+/* Cabecera */
+header {
+    flex-basis: 5%; /* Ocupa un 5% de la altura total */
+    height: 5vh; /* Altura relativa al viewport */
+    background-color: black; /* Fondo negro */
+    display: flex; /* Flexbox horizontal */
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center; /* Centra verticalmente los hijos */
+    color: white; /* Texto blanco */
+}
+header #menu {
+    flex-basis: 5%; /* Ocupa un 5% del ancho */
+}
+
+header #buscar {
+    flex-basis: 30%; /* Ocupa un 30% del ancho */
+    background-color: blue;
+}
+header figure {
+    flex-basis: 10%; /* Ancho del logo */
+    height: 100%;
+}
+header figure img{
+    height: 100%; /* Imagen ocupa toda la altura del contenedor */
+}
+header form{
+    flex-basis: 20%; /* Ancho del formulario */
+    height: 100%;
+    background-color: red;
+    display: flex;
+    flex-direction: column; /* Organiza en columna */
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+}
+
+header form input{
+    flex-basis: 50%; /* Altura relativa dentro del form */
+    width: 80%; /* Ancho del input */
+    border-radius: 20px; /* Bordes redondeados */
+    font-size: 20px; /* Tamaño de letra */
+    color: blue; /* Texto azul */
+    background-color: bisque; /* Fondo beige */
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; /* Tipografía */
+}
+header #enlaces {
+    background-color: yellow;
+    flex-basis: 30%; /* Ocupa un 30% del ancho */
+}
+
+/* Contenido principal */
+main {
+    flex-basis: 65%; /* Ocupa 65% de la altura total */
+}
+main section {
+    display: flex;
+    flex-direction: row; /* Artículos en fila */
+    justify-content: space-around; /* Espacio entre artículos */
+    flex-wrap: wrap; /* Permite que salten de línea */
+    border: 3px solid red; /* Borde rojo */
+}
+main section article {
+    position: relative; /* Permite posicionar elementos internos */
+    border: 1px solid black;
+    flex-basis: 24.5%; /* Cada artículo ocupa aprox. 1/4 del ancho */
+    display: flex;
+    flex-direction: column; /* Contenido en columna */
+    justify-content: space-around;
+    align-items: center;
+    margin: 5px 0px; /* Margen arriba y abajo */
+    height: 30vh; /* Altura fija */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 5px 10px; /* Relleno interno */
+    transition: all .2s ease-in; /* Animación suave al pasar el ratón */
+}
+main section article:hover{
+    box-shadow: 2px 2px 2px 1px rgba(0,0,0,0.1); /* Sombra */
+    transform: translateY(-3px); /* Se levanta un poco */
+    background-color: antiquewhite; /* Fondo cambia */
+}
+
+/* Etiqueta de envío gratis */
+main section article .envio{
+    position: absolute; /* Se coloca encima del artículo */
+    top: 50px;
+    left: 10px;
+    background-color: rgb(202,78,148); /* Fondo rosa */
+    border-radius: 5px;
+    padding: 3px;
+    color: white;
+    font-weight: bold;
+    width: 40%;
+}
+
+/* Imagen del producto */
+main section article figure{
+    flex-basis: 50%; /* Ocupa mitad de la altura */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main section article figure img{
+    flex-basis: 100%; /* Imagen ocupa todo el espacio */
+}
+
+/* Nombre del producto */
+main section article .nombre{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* Características del producto */
+main section article .caracteristicas{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+main section article .caracteristicas .cpu{
+    flex-basis: 100%; /* Ocupa todo el ancho */
+    order: 3; /* Se coloca en tercer lugar */
+    text-align: center;
+    color: black;
+    font-weight: bold;
+}
+main section article .caracteristicas .ram{
+    flex-basis: 50%; /* Ocupa mitad del ancho */
+    order: 2;
+    text-align: right;
+    color: green;
+    font-weight: bold;
+}
+main section article .caracteristicas .disco{
+    flex-basis: 50%; /* Ocupa mitad del ancho */
+    order: 1;
+    color: red;
+    font-weight: bold;
+}
+
+/* Valoraciones */
+main section article .valoraciones{
+    border: 1px solid red;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px; /* Espacio entre elementos */
+}
+main section article .valoraciones .fa-solid{
+    color: yellow; /* Estrellas amarillas */
+}
+main section article .valoraciones .nvaloraciones{
+    font-size: 10px;
+    font-weight: bold;
+}
+main section article .valoraciones .comentarios{
+    font-size: 10px;
+    font-weight: bold;
+}
+
+/* Pie de página */
+footer {
+    flex-basis: 30%; /* Ocupa 30% de la altura */
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; /* Los hijos pueden saltar de línea */
+}
+footer nav#sociales {
+    flex-basis: 50%; /* Ocupa mitad del ancho */
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    padding-left: 30px;
+}
+footer nav#sociales a{
+    text-decoration: none; /* Quita subrayado */
+    background-color: lightgreen;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50px; /* Botón circular */
+    margin-right: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-in-out; /* Animación suave */
+}
+footer nav#sociales a:hover{
+    transform: translate(0px, -10px) rotate(60deg) scale(1.2); /* Animación al pasar el ratón */
+}
+footer nav#sociales a i {
+    font-size: 20px;
+    color: white;
+}
+
+/* Bloque de suscripción */
+footer div#subscribete{
+    background-color: burlywood;
+    flex-basis: 50%;
+}
+
+/* Artículos del footer */
+footer article{
+    background-color: cadetblue;
+    flex-basis: 33.33%; /* Cada uno ocupa un tercio */
+}
+footer article h3{
+    color: whitesmoke;
+    text-transform: uppercase; /* Mayúsculas */
+    margin-left: 15px;
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+footer article nav {
+    display: flex;
+    flex-direction: column;
+    margin-left: 25px;
+}
+footer article nav a{
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+footer article nav a i{
+    font-size: 20px;
+    color: whitesmoke;
+}
+footer article nav a span{
+    color: whitesmoke;
+}
+footer article nav a:hover span{
+    color: lightgreen; /* Cambia color al pasar el ratón */
+}

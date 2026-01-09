@@ -1,0 +1,138 @@
+<!DOCTYPE html> <!-- Documento HTML5 -->
+<html lang="en"> <!-- Idioma principal inglés -->
+<head>
+    <meta charset="UTF-8"> <!-- Codificación UTF-8 (acentos, ñ, etc.) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Adaptación a móviles -->
+    <title>PowerPlanet</title> <!-- Título de la pestaña -->
+    <link rel="stylesheet" href="detalleApuntes.css"> <!-- Estilos propios -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"> <!-- Iconos Font Awesome -->
+</head>
+<body>
+    <!-- CABECERA -->
+    <header>
+        <div id="menu">
+            <i class="fa-solid fa-bars"></i> <!-- Icono menú hamburguesa -->
+        </div>
+        <figure>
+            <img src="imagenes/logo.png" alt="Logo PowerPlanet"> <!-- Logo -->
+        </figure>
+        <form>
+            <input type="search" placeholder="Buscar..."> <!-- Buscador -->
+        </form>
+        <nav>
+            <a href="#">Ofertas Limitadas</a>
+            <a href="#">Contactanos</a>
+            <a href="#">ES</a>
+        </nav>
+        <div id="carrito"> 
+            <i class="fa-solid fa-cart-shopping"></i> <!-- Icono carrito -->
+            <i class="fa-solid fa-user"></i> <!-- Icono usuario -->
+        </div>
+    </header> 
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+        <!-- Migas de pan (breadcrumb) -->
+        <nav id="breadcrumb">
+            <a href=#><i class="fa-solid fa-house"></i></a> &gt;  
+            <a href="index.html">Smartphones</a> &gt;
+            <a href="#">Moviles</a> &gt;
+            <a href="#">One Plus 13</a>
+        </nav>
+       
+        <!-- Miniaturas de galería -->
+        <figure id="thumbnails">
+            <img src="..." alt="Vista 1">
+            <img src="..." alt="Vista 2">
+            <img src="..." alt="Vista 3">
+            <img src="..." alt="Vista 4">
+            <img src="..." alt="Vista 5">
+        </figure>
+
+        <!-- Imagen principal del producto -->
+        <figure id="portada">
+            <div class="badges">
+                <div class="badge-friday">FRESH FRIDAY</div>
+                <div class="badge-envio">Envío gratis</div>
+            </div>
+            <img id="foto" src="..." alt="Cubot KingKong X"> <!-- Imagen portada -->
+        </figure>
+
+        <!-- Características del producto -->
+        <article id="caracteristicas">
+            <h1 id="nombre">Cubot KingKong X 16GB/256GB Negro</h1> <!-- Nombre dinámico -->
+            
+            <!-- Valoraciones -->
+            <div class="valoraciones">
+                <span class="star">
+                    <i class="fa-solid fa-star"></i> <!-- Estrellas -->
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </span>
+                <span class="nvaloraciones">5</span> <!-- Número de valoraciones -->
+                <span class="comentarios">(3 opiniones)</span> <!-- Opiniones -->
+            </div>
+
+            <!-- Precios -->
+            <div class="price-section">
+                <span id="dto" class="descuento">-35%</span> <!-- Descuento dinámico -->
+                <span class="pvr">284,99€</span> <!-- Precio actual -->
+            </div>
+            <div>
+                <p class="pvp">Precio recomendado: 439,00€</p> <!-- Precio original -->
+                <p style="color: #999; font-size: 13px;">Los precios incluyen IVA</p>
+            </div>
+
+            <!-- Marca y referencia -->
+            <a href="#" class="brand">CUBOT</a>
+            <p style="color: #666; font-size: 13px;">REF: CUBOT-KINGKONGX-16GB-256GB</p>
+
+            <!-- Disponibilidad -->
+            <div class="availability">
+                <div class="icon-delivery">🚚</div>
+                <div class="availability-info">
+                    <strong>Disponibilidad: ¡En stock! Recíbelo mañana</strong>
+                    <span>Envío : ¡Gratis!</span>
+                    <span>Devolución Gratis: Hasta 8 de Febrero</span>
+                    <span>Garantía: 3 años</span>
+                </div>
+            </div>
+        </article>
+    </main>
+</body>
+
+<!-- JAVASCRIPT -->
+<script>
+    // 1. Obtener parámetros de la URL
+    const urlParmans = new URLSearchParams(window.location.search);
+    // 2. Extraer el parámetro 'id'
+    const idProd = parseInt(urlParmans.get('id'))
+    console.log ("--->", idProd) // Comprobar que llega el id
+
+    // 3. Leer archivo JSON con productos
+    fetch('./apuntes.json')
+        .then(response => response.json()) // Convertir a objeto JS
+        .then ( productos => {
+            // 4. Buscar producto con ese id
+            const producto = productos.find(p => p.id === idProd)
+            console.log("-1->",producto)
+            console.log("-2->", producto.nombre, producto.precio)
+           
+            // 5. Actualizar nombre y descuento
+            document.getElementById('nombre').textContent = producto.nombre;
+            document.getElementById('dto').textContent = `- ${producto.descuento} %`;
+            
+            // 6. Cambiar imagen principal
+            document.getElementById('foto').setAttribute("src", producto.imagen);
+
+            // 7. Generar galería dinámica
+            const galeria = document.getElementById('thumbnails');
+            galeria.innerHTML=''; // Limpia contenido anterior
+            producto.galeria.forEach(img => {
+                let imagen = document.createElement('img'); // Crea <img>
+                imagen.setAttribute("src", img); // Asigna URL
+                galeria.appendChild(imagen); // Añade a la galería
+            })
+        })
+</script>
