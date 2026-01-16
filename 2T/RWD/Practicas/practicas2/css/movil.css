@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+}
+
+header {
+    background-color: rgba(0, 0, 10, 0.8);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+header h1{
+    text-align: center;
+    margin: 10px 0;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header nav {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 0px solid white;
+    text-align: center;
+}
+
+header nav a:hover {
+    background-color: white;
+    color: black;
+}
+
+header button {
+    margin: 10px auto;
+    padding: 5px 10px;
+    border: none;
+    background-color: red;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 20px;
+    margin: 20px;
+}
+
+main nav {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    background-color: gainsboro;
+    border-radius: 5px;
+}
+
+main nav h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 10px;
+}
+
+main nav a {
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+
+main section {
+    margin-bottom: 20px;
+}
+
+main section h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 10px;
+}
+
+main section h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 10px;
+}
+
+main section p {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 10px;
+} 
+
+main section #dispositivos  {
+    display: flex;
+    flex-direction: column;
+}
+
+main section #dispositivos a {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 10px;
+}
+
+main section #estilos {
+    display: flex;
+    flex-direction: column;
+}
+
+main section #estilos a {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 10px;
+}
+
+main aside {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10pt;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: skyblue;
+}
+
+main aside div {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    background-color: rgba(0, 0, 10, 0.8);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 10px;
+}
+
+footer #redesSociales {
+    margin-bottom: 10px;
+}
+
+footer #redesSociales a {
+    color: white;
+    padding: 5px;
+    text-decoration: none;
+    margin: 0 10px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 10, 1);
+}
+
+footer #infoContacto p {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 5px 0;
+}

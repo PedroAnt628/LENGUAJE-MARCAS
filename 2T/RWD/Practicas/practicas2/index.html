@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--Siempre se carga primero el css para moviles -->
+    <link rel="stylesheet" href="css/movil.css">
+    <!--Luego se carga el css para tablets-->
+    <link rel="stylesheet" href="css/tablet.css" media="screen and (min-width:768px)">
+    <!--Finalmente se carga el css para escritorio-->
+    <link rel="stylesheet" href="css/escritorio.css" media="screen and (min-width:1024px)">
+</head>
+<body>
+    <header>
+        <h1>Mi sitio Web</h1>
+        <nav>
+                <a href="#">Inicio</a>
+                <a href="#">Servicios</a>
+                <a href="#">Acerca de</a>
+                <a href="#">Contacto</a>
+        </nav>
+        <button>Registrarse</button>
+
+    </header>
+    <main>
+        <nav>
+            <h3>Menú Lateral</h3>
+            <a href="#">Categoría 1</a>
+            <a href="#">Categoría 2</a>
+            <a href="#">Categoría 3</a>
+            <a href="#">Categoría 4</a>
+            <a href="#">Configuracion</a>
+        </nav>
+        <section id="contenidoPrincipal">
+            <h2>Contenido Principal</h2>
+            <h3>Responsive Web Design con Mobile First</h3>
+            <p>Este diseño adapta su estructura según el tamaño de la pantalla:</p>
+            <div id="dispositivos" >
+                <a><strong>· Móvil (&lt; 768px)</strong>: Layout vertical, todo en columna</a>
+                <a><strong>· Tablet (768px - 1023px)</strong>: Grid 2 columnas, menú lateral + contenido/aside apilados</a>
+                <a><strong>· Desktop (≥ 1024px)</strong>: Grid 3 columnas, todas visibles simultáneamente</a>
+            </div>   
+            <p>Los estilos se cargan en cascada: primero móvil (base), luego tablet, finalmente desktop.</p>
+            <p>Esta estructura utiliza tres archivos CSS separados en la carpeta - css/:</p>
+            <div id="estilos">
+                <a>· movil.css - Estilos base para todos los dispositivos</a>
+                <a>· tablet.css - Estilos adicionales para tablets (≥768px)</a>
+                <a>· desktop.css - Estilos adicionales para escritorio (≥1024px)</a>    
+            </div>
+        </section>
+        <aside>
+            <h3>Informacion Adicional</h3>
+            <p>Este es el area de contenido complementario que puede contener:</p>
+            <div>
+                <a>· Publicidad</a>
+                <a>· Enlaces relacionados</a>
+                <a>· Widgets</a>
+                <a>· Noticias destacadas</a>
+            </div>
+        </aside>
+    </main>
+    <footer>
+        <h2>Siguenos</h2>
+        <section id="redesSociales">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+            <a href="#">LinkedIn</a>
+        </section>
+        <h2>Contacto</h2>
+        <section id="infoContacto">
+            <p>info@misitio.com</p>
+            <p>+34 123 456 789</p>
+            <p>Madrid, España</p>
+        </section>
+    </footer>
+
+</body>
+</html>

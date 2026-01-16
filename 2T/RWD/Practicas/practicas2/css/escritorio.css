@@ -1,0 +1,44 @@
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+header{
+    flex-wrap: wrap;
+    flex-basis: 10%;
+}
+
+header h1{
+    flex-basis: 80%;
+    order: 1;
+}
+
+header nav {
+    flex-basis: 50%;
+    order: 3;
+}
+
+header button {
+    flex-basis: 15%;
+    order: 2;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    flex-basis: 75%;
+}
+
+main #menuLateral {
+    flex: 20%;
+}
+main #contenidoPrincipal {
+    flex: 60%;
+}
+main #informacionAdicional {
+    flex: 20%;
+}
+
+footer {
+    flex-basis: 15%;
+}
