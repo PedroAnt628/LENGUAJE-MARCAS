@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.contenedor {
+    border: 1px solid black;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    
+}
+
+.contenedor div {
+    border: 1px solid red;
+    padding: 20px;
+    text-align: center;
+}
+
+body{
+    display: grid;
+    grid-template-columns: 30% 50% 20%;
+    grid-template-rows: 20vh 60vh 20vh;
+}
+
+header {
+    border: 1px solid blue;
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+}
+
+
+
+ nav {
+    border: 1px solid purple;
+}
+
+ section {
+    border: 1px solid brown;
+}
+
+ aside {
+    border: 1px solid pink;
+}
+
+
+footer {
+    border: 1px solid orange;
+    grid-column: 1 / 4;
+    grid-row: 3 / 4;
+}
