@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: grey;
+    padding: 10px;
+    display: grid;
+    grid-template-areas: none
+        ". navSociales ."
+        ". loginTlfn ."
+        "logo titulos titulos"
+        "direcciones direcciones barra"
+        "menuPpal menuPpal menuPpal"
+    ;
+    grid-template-columns: 2fr 6fr 2fr;
+    grid-template-rows: 50px 50px 100px 100px 200px;
+
+}
+
+header nav.sociales {
+    background-color: aquamarine;
+    padding: 5px;
+    grid-area: navSociales;
+}
+
+header nav.login {
+    background-color: rosybrown;
+    padding: 5px;
+    grid-area: loginTlfn;
+}
+
+header figure {
+    background-color: orange;
+    padding: 5px;
+    grid-area: logo;
+}
+
+header div.titulos {
+    background-color: lightyellow;
+    padding: 5px;
+    grid-area: titulos;
+}
+
+header div.direcciones {
+    background-color: lightgreen;
+    padding: 5px;
+    grid-area: direcciones;
+}
+
+header i.fa-solid fa-bars {
+    background-color: lightblue;
+    padding: 5px;
+    grid-area: barra;
+}
+
+header nav.menu-ppal {
+    background-color: lightcoral;
+    padding: 5px;
+    grid-area: menuPpal;
+}
