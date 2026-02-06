@@ -1,31 +1,27 @@
     header {
-        display: grid;
-        grid-template-columns: 1fr auto auto;
-        grid-template-rows: auto auto;
-        grid-template-areas:
-            "sociales . login"
-            "left center right";
-        align-items: center;
-        gap: 18px;
-        padding: 20px 28px;
+        
     }
 
-    header nav.sociales { grid-area: sociales; 
+    header nav.sociales {
+        order: 2;
+        flex-basis: 30%;
         justify-self: start; 
         display: flex; 
         gap: 12px; 
         align-items: center; 
     }
-    
-    header nav.login { grid-area: login; 
+
+    header nav.login { 
+        order: 1;
+        flex-basis: 50%;
         justify-self: end; 
         display: flex; 
-        gap: 12px; 
         align-items: center; 
-        font-size: 0.95rem; 
     }
 
-    header figure { grid-area: left; 
+    header figure { 
+        flex-basis: 10%;
+        order: 3;
         display: inline-flex; 
         align-items: center; 
     }
@@ -34,7 +30,9 @@
          height: 72px; 
         }
 
-    header div.titulos { grid-area: left; 
+    header div.titulos { 
+        flex-basis: 20%;
+        order: 4;
         display: inline-block; 
         vertical-align: middle; 
         margin-left: 12px; 
@@ -43,13 +41,35 @@
         font-weight: 700; 
     }
 
-    header div.direcciones { grid-area: center; display: flex; justify-content: center; gap: 24px; align-items: center; }
-    header div.direcciones button { padding: 14px 22px; font-size: 0.9rem; }
+    header div.direcciones { 
+        flex-basis: 45%;
+        order: 5;
+        display: flex; 
+        justify-content: center; 
+        gap: 24px; 
+        align-items: center;
+    }
 
-    header i.fa-solid.fa-bars { grid-area: right; justify-self: end; font-size: 1.2rem; align-self: center; }
+    header div.direcciones button { 
+        padding: 14px 22px; 
+        font-size: 0.9rem; 
+    }
 
-    header nav.menu-ppal { grid-area: right; display: flex; flex-direction: column; align-items: flex-end; gap: 12px; border-top: none; padding-top: 0; }
-    header nav.menu-ppal a { padding: 6px 0; }
+    header i.fa-solid.fa-bars { 
+        display: none; 
+    }
 
-    header nav.sociales a, header nav.login a, header nav.menu-ppal a { color: #42305a; }
+    header nav.menu-ppal { 
+        flex-basis: 15%;
+        order: 7;
+        display: flex; 
+        flex-direction: column; 
+        align-items: flex-end; 
+        gap: 12px; 
+        border-top: none; 
+        padding-top: 0; 
+    }
 
+    header nav.menu-ppal a { 
+        padding: 6px 0; 
+    }

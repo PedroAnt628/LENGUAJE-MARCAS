@@ -17,8 +17,7 @@ header {
 }
 
 header nav.sociales {
-    order: 1;
-    width: 100%;
+    flex-basis: 100%;
     display: flex;
     justify-content: center;
     gap: 12px;
@@ -30,12 +29,11 @@ header nav.sociales a { color: #6b3aa6;
 }
 
 header nav.login {
-    order: 2;
-    width: 100%;
+    flex-basis: 100%;
     display: flex;
     justify-content: center;
-    gap: 10px;
-    font-size: 0.85rem;
+    margin-left: 50px;
+    margin-right: 50px;
     color: #6b3aa6;
 }
 
@@ -46,9 +44,7 @@ header nav.login a {
 }
 
 header figure {
-    order: 3;
-    flex: 0 0 auto;
-    width: auto;
+    flex-basis: 15%;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -63,21 +59,16 @@ header figure img {
 }
 
 header div.titulos {
-    order: 3; 
-    flex: 1 1 auto;
-    text-align: center;
-    font-weight: 700;
-    font-size: 1rem;
-    margin-top: 0;
+    flex-basis: 75%;
+    text-align: start;
+    margin-left: 10px;
 }
 
 header div.direcciones {
-    order: 4;
-    flex: 1 1 auto; 
+    flex-basis: 80%;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     gap: 16px;
-    align-items: center;
     margin-top: 10px;
 }
 
@@ -98,7 +89,7 @@ header div.direcciones button a {
 }
 
 header i.fa-solid.fa-bars {
-    order: 4; 
+    flex-basis: 10%;
     position: static;
     margin-left: auto;
     font-size: 1.4rem;
@@ -108,8 +99,7 @@ header i.fa-solid.fa-bars {
 }
 
 header nav.menu-ppal {
-    order: 7;
-    width: 100%;
+    flex-basis: 100%;
     display: flex;
     flex-direction: column;
     gap: 8px;
