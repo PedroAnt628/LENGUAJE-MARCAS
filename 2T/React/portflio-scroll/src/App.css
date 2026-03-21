@@ -1,0 +1,6 @@
+/* Esto es obligatorio para que el 'min-h-screen' funcione de verdad */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  background-color: #111827; /* Tu bg-gray-900 */
+}
