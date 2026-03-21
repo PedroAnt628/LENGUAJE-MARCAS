@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "year": "2023",
+        "title": "RLCS World Championship",
+        "description": "Campeones absolutos del mundo en Düsseldorf, marcando una temporada perfecta.",
+        "category": "World",
+        "icon": "🏆"
+    },
+    {
+        "id": 2,
+        "year": "2023",
+        "title": "RLCS Spring Major",
+        "description": "Victoria dominante en Boston antes del mundial.",
+        "category": "Major",
+        "icon": "🥇"
+    },
+    {
+        "id": 3,
+        "year": "2022",
+        "title": "EU Regional Champions",
+        "description": "Dominio total de la región europea durante el split de otoño.",
+        "category": "Regional",
+        "icon": "🏅"
+    }
+]

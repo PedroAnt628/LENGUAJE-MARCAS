@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "name": "ZEN",
+        "role": "Starter",
+        "country": "Francia",
+        "description": "La cara de Vitality y el jugador más dominante de la historia. Su control aéreo sigue siendo el estándar de oro en 2026.",
+        "image": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcStsHNspDTNfVqCeRR4n69_DCz1G0i2iak9Qn6gWsHKKPUWpbdO2aP7Wf89yCGe",
+        "tags": ["The GOAT", "World Champ", "Mechanical"]
+    },
+    {
+        "id": 2,
+        "name": "EXOTIIK",
+        "role": "Starter",
+        "country": "Francia",
+        "description": "Brice llegó para aportar la estabilidad y la experiencia necesarias. Un experto en la 'demo' y en jugadas de equipo.",
+        "image": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRxc_UP5j83A9Ngu2Dm0LtwaXrsNZS63XJ-0-LkgOCUCEUDrEfOsIw1QB0uWv1r",
+        "tags": ["Veteran", "Solid", "Team Player"]
+    },
+    {
+        "id": 3,
+        "name": "STIZZY",
+        "role": "Starter",
+        "country": "España",
+        "description": "Gaspar es la última gran incorporación. Su agresividad constante genera el espacio que Zen necesita para brillar y darse a lucir.",
+        "image": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRrLD-RWQc0ebpYumpP-MJtv6K22Sr01xhpN9DWoVngBMTSHTfILUPtHUQHJgl9",
+        "tags": ["Young Star", "Aggressive", "Rising"]
+    }
+]
