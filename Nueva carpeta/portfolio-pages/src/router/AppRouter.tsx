@@ -1,19 +1,20 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { MainLayout } from "@/layouts/MainLayout";
-import  Home  from "@/pages/Home";
-import { Players } from "@/pages/players/Players";
-import { PlayerDetalle } from "@/pages/players/PlayerDetalle";
-import Logros from "@/pages/Logros";
+import { pemorMainLayout } from "@/layout/pemorMainLayout";
+import { pemorHome } from "@/pages/pemorHome";
+import { pemorPlayers } from "@/pages/players/pemorPlayers";
+import { pemorPlayerDetalle } from "@/pages/players/pemorPlayerDetalle";
 
-export const AppRouter = () => {
+export const pemorAppRouter = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<MainLayout />}>
-          <Route index element={<Home />} />
-          <Route path="plantilla" element={<Players />} />
-          <Route path="plantilla/:id" element={<PlayerDetalle />} />
-          <Route path="logros" element={<Logros />} />
+        <Route path="/" element={<pemorMainLayout />}>
+          <Route index element={<pemorHome />} />
+          {/* RUTA DINÁMICA POR CATEGORÍA: El :tipo captura 'starter', 'coach', etc. */}
+          <Route path="jugadores/:tipo" element={<pemorPlayers />} />
+          {/* RUTA DINÁMICA POR ID: Para el detalle individual */}
+          <Route path="jugadores/detalle/:id" element={<pemorPlayerDetalle />} />
+          <Route path="contacto" element={<div>Página Contacto</div>} />
         </Route>
       </Routes>
     </BrowserRouter>

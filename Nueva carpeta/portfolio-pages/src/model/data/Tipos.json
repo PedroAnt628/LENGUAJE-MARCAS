@@ -1,0 +1,5 @@
+[
+  { "id": 1, "nombre": "Starters", "tipo": "starter" },
+  { "id": 2, "nombre": "Coaches", "tipo": "coach" },
+  { "id": 3, "nombre": "Substitutes", "tipo": "substitute" }
+]
